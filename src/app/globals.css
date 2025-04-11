@@ -2,9 +2,37 @@
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+body {
+  @apply !min-w-full;
+}
 
 .container_w {
   @apply max-w-[1160px] mx-auto px-1;
+}
+
+/* Ẩn spinner trên Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Chỉnh màu sắc thanh cuộn */
+::-webkit-scrollbar {
+  width: 8px; /* Độ rộng scrollbar */
+  height: 8px; /* Chiều cao scrollbar ngang */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626; /* Màu của thanh cuộn */
+  border-radius: 4px; /* Bo góc */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền của track */
+  border-radius: 2px;
 }
 
 @theme inline {

@@ -23,7 +23,14 @@ export default function Header({ page }: Props) {
       <div className="fixed bg-primary top-0 left-0 right-0 py-4">
         <div className="flex justify-between container_w items-center">
           <Link href={'/'}>
-            <Image src={'/secondary.svg'} alt="Logo Tech Mall" width={50} height={50}></Image>
+            <Image
+              src={'/secondary.svg'}
+              alt="Logo Tech Mall"
+              width={50}
+              height={50}
+              style={{ height: 50, width: 50 }}
+              priority
+            />
           </Link>
           <h1 className="text-background text-xl font-semibold">ĐĂNG NHẬP</h1>
         </div>
