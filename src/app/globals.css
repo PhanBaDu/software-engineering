@@ -10,6 +10,13 @@ body {
   @apply max-w-[1160px] mx-auto px-1;
 }
 
+/* Ẩn spinner trên Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* Ẩn spinner trên Firefox */
 input[type='number'] {
   -moz-appearance: textfield;

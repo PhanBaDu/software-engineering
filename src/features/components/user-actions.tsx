@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 
 import {
   DropdownMenu,
@@ -8,7 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs/components';
 import { Gender } from '@prisma/client';
-import { LogOut, ShoppingBag, UserRoundPen } from 'lucide-react';
+import { LogOut, MousePointerClick, ShoppingBag, UserRoundPen } from 'lucide-react';
 import Link from 'next/link';
 
 interface Props {
@@ -27,7 +28,13 @@ export default function UserActions({ user }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="cursor-pointer" asChild>
-        <div className="flex items-center justify-between gap-2 p-[2px] pl-2 bg-background rounded">
+        <div className="flex items-center justify-between gap-2 p-[2px] pl-1 bg-background rounded">
+          <MousePointerClick
+            className="rotate-[90deg] text-primary"
+            strokeWidth={3}
+            size={15}
+            width={14}
+          />
           <span className="text-primary font-bold text-[10px]">{user.fullName}</span>
           <Avatar className="rounded">
             <AvatarImage className="rounded" src={user.avatarUrl || ''} />
@@ -35,7 +42,7 @@ export default function UserActions({ user }: Props) {
           </Avatar>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mr-[70px] w-44">
+      <DropdownMenuContent className="w-44" align="end">
         <DropdownMenuItem asChild>
           <Link
             href="/account"
@@ -57,7 +64,7 @@ export default function UserActions({ user }: Props) {
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <LogoutLink className="cursor-pointer text-xs flex items-center justify-between">
-            <span> Đăng xuất</span>
+            <span>Đăng xuất</span>
             <LogOut className="text-primary" />
           </LogoutLink>
         </DropdownMenuItem>
