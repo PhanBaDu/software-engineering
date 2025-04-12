@@ -13,8 +13,12 @@ export const shopInformation = z.object({
   idNumber: z.string().min(12, {
     message: 'Số CMND/CCCD không hợp lệ.',
   }),
-  idImageUrl: z.instanceof(File, { message: 'Vui lòng thêm ảnh!.' }),
-  userIdImageUrl: z.instanceof(File, { message: 'Vui lòng thêm ảnh!.' }),
+  idImageUrl: z.string().min(1, {
+    message: 'Vui lòng thêm ảnh căn cước công dân!',
+  }),
+  userIdImageUrl: z.string().min(1, {
+    message: 'Vui lòng thêm ảnh căn cước công dân và bạn!',
+  }),
 });
 
 export type ShopInformation = z.infer<typeof shopInformation>;

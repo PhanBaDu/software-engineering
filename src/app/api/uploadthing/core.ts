@@ -14,11 +14,11 @@ export const ourFileRouter = {
        * @see https://docs.uploadthing.com/file-routes#route-config
        */
       maxFileSize: '2MB',
-      maxFileCount: 11,
+      maxFileCount: 1,
     },
   })
     // Set permissions and file types for this FileRoute
-    .middleware(async ({ req }) => {
+    .middleware(async () => {
       // This code runs on your server before upload
       const user = await getCurrentUser(); // Get user from request
 

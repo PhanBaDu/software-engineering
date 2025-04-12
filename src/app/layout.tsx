@@ -1,10 +1,14 @@
+import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
+import { extractRouterConfig } from 'uploadthing/server';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import '@uploadthing/react/styles.css';
+import { ourFileRouter } from '@/app/api/uploadthing/core';
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400'],
   display: 'swap',
 });
 
@@ -19,9 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden">
-      <body className={`${inter.className} antialiased`}>
-        <div className="container_w text-sm">{children}</div>
+    <html lang="en" className="overflow-x-hidden" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
+        <div className="container_w text-sm">
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+          {children}
+        </div>
       </body>
     </html>
   );
