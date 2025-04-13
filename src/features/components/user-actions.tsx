@@ -34,7 +34,7 @@ export default function UserActions({ user }: Props) {
             size={15}
             width={14}
           />
-          <span className="text-primary font-bold text-[10px]">{user.fullName}</span>
+          <span className="text-primary font-semibold text-[10px]">{user.fullName}</span>
           <Avatar className="rounded">
             <AvatarImage className="rounded" src={user.avatarUrl || ''} />
             <AvatarFallback className="">{user.fullName[0]}</AvatarFallback>

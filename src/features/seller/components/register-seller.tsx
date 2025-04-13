@@ -3,7 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { CreateShopAction } from '@/lib/actions';
+import { CreateOrUpdateShopAction } from '@/lib/actions';
 
 import { shopInformation } from '../schemas';
 import { Button } from '@/components/ui/button';
@@ -27,7 +27,7 @@ export default function SellerForm() {
   const [urlIdUserNumber, setUrlIdUserNumber] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingIdUser, setLoadingIdUser] = useState<boolean>(false);
-  const [result, action] = useActionState(CreateShopAction, undefined);
+  const [result, action] = useActionState(CreateOrUpdateShopAction, undefined);
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof shopInformation>>({

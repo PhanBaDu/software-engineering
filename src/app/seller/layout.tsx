@@ -12,7 +12,10 @@ export default async function SellerLayout({
   const user = await getCurrentUser();
   const shop = await getCurrentShop();
   if (!user) return redirect('/api/auth/login');
-  if (shop) return redirect(`/shop/dashboard/${shop?.id}`);
+  if (shop && shop.status === 'APPROVED') return redirect(`/shop/dashboard/${shop?.id}/all`);
+  if (shop && shop.status === 'PENDING') return redirect(`/shop/pending`);
+  if (shop && shop.status === 'REJECTED') return redirect(`/shop/rejected`);
+
   return (
     <div className="pt-28 container_w">
       <Header page="seller" />
