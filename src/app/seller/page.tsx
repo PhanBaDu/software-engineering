@@ -16,13 +16,13 @@ export default async function SellerPage() {
         </CardHeader>
         <CardContent className="flex justify-between gap-6 items-center">
           <Button asChild variant={'outline'}>
-            <Link className="text-xs" href={'/'}>
+            <Link className="text-xs flex-1" href={'/'}>
               <ArrowLeft className="text-primary" />
               <span className="text-primary">Từ chối và trở về trang chủ</span>
             </Link>
           </Button>
           <Button asChild>
-            <Link className="text-xs" href={'/seller/form'}>
+            <Link className="text-xs flex-1" href={'/seller/form'}>
               <span>Đến nơi đăng ký làm người bán</span>
               <ArrowRight />
             </Link>

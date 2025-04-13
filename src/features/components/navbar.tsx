@@ -47,14 +47,16 @@ export default async function Navbar() {
       {/* Logo | Search | Cart */}
       <div className="flex justify-between items-center gap-2">
         <div className="w-1/12">
-          <Image
-            src={'/secondary.svg'}
-            alt="Logo Tech Mall"
-            width={50}
-            height={50}
-            style={{ height: 50, width: 50 }}
-            priority
-          />
+          <Link href={'/'}>
+            <Image
+              src={'/secondary.svg'}
+              alt="Logo Tech Mall"
+              width={50}
+              height={50}
+              style={{ height: 50, width: 50 }}
+              priority
+            />
+          </Link>
         </div>
         <div className="w-9/12 flex items-center gap-1 justify-center bg-background relative border rounded p-[2px]">
           <Input

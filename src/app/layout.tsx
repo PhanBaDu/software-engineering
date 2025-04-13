@@ -3,7 +3,6 @@ import { extractRouterConfig } from 'uploadthing/server';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import '@uploadthing/react/styles.css';
 import { ourFileRouter } from '@/app/api/uploadthing/core';
 
 const inter = Inter({
@@ -25,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
-        <div className="container_w text-sm">
+        <div className="text-xs">
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           {children}
         </div>

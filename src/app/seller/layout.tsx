@@ -14,7 +14,7 @@ export default async function SellerLayout({
   if (!user) return redirect('/api/auth/login');
   if (shop) return redirect(`/shop/dashboard/${shop?.id}`);
   return (
-    <div className="pt-28">
+    <div className="pt-28 container_w">
       <Header page="seller" />
       {children}
     </div>
