@@ -9,7 +9,7 @@ interface Props {
 export default function Header({ page }: Props) {
   if (page === 'main')
     return (
-      <div className="fixed bg-primary top-0 left-0 right-0">
+      <div className="fixed bg-primary top-0 left-0 right-0 z-50 border-b border-background">
         <div className="flex justify-between container_w">
           <Navbar />
         </div>
